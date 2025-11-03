@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: biblioteca
+  datasource:
+    url: jdbc:mysql://178.16.140.38:3306/BIBLIOTECA?useUnicode=true&characterEncoding=utf8&connectionTimeZone=UTC-5
+    username: BIBLIOTECA
+    password: ClaveRoot123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+server:
+  port: 8085

@@ -1,0 +1,17 @@
+services:
+  mysql5:
+    container_name: mysql5
+    image: mysql:latest
+    volumes:
+      - c:/MySQLDatos:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: 'BIBLIOTECA'
+      MYSQL_ROOT_PASSWORD: 'ClaveRoot'
+      MYSQL_USER: 'BIBLIOTECA'
+      MYSQL_PASSWORD: 'Clave123'
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
